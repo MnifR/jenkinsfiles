@@ -9,7 +9,7 @@ The examples were developed while working on an article series called *Coding Co
     <td colspan="2">01/2018 (covering examples on branches 1 to 5)</td>
   </tr>
   <tr>
-    <td rowspan="2"><img src="https://cloudogu.com/images/blog/2018/04/jenkins_grundlagen.png" width=50% /></td>
+    <td rowspan="2"><img src="https://cloudogu.com/assets/blog/2018/Coding_CD_1_150x150-72912009bc1838646971990e84f8c7f36264e9a5426fc0a22670f33630df4143.png" width=50% /></td>
     <td><a href="https://cloudogu.com/en/blog/continuous_delivery_1_basics"> 🇬🇧 Jenkins pipeline plugin basics</a></td>
   </tr>
   <tr>
@@ -20,7 +20,7 @@ The examples were developed while working on an article series called *Coding Co
     <td colspan="2">02/2018 (covering examples on branches 6 and 7)</td>
   </tr>
   <tr>
-    <td rowspan="2"><img src="https://cloudogu.com/images/blog/2018/04/jenkins_optimization.png" width=50% /></td>
+    <td rowspan="2"><img src="https://cloudogu.com/assets/blog/2018/Coding_CD_2_150x150-8fab749f19e2654d763cd0de8d0b00af1ad2ab1cd35e2bff64afd7b6eb76a2d8.png" width=50% /></td>
     <td><a href="https://cloudogu.com/en/blog/continuous_delivery_2"> 🇬🇧 Performance optimization for the Jenkins Pipeline</a></td>
   </tr>
   <tr>
@@ -31,7 +31,7 @@ The examples were developed while working on an article series called *Coding Co
     <td colspan="2">03/2018 (covering examples on branches 8 and 9)</td>
   </tr>
   <tr>
-    <td rowspan="2"><img src="https://cloudogu.com/images/blog/2018/05/jenkins_werkzeuge.png" width=50% /></td>
+    <td rowspan="2"><img src="https://cloudogu.com/assets/blog/2018/Coding_CD_3_150x150-c62d32c11a8e77b9e6a01bfb5e4f969f440be8bc984e8ba7c03426ff469bdd6b.png" width=50% /></td>
     <td><a href="https://cloudogu.com/en/blog/continuous_delivery_part_3"> 🇬🇧 Helpful Tools for the Jenkins Pipeline</a></td>
   </tr>
   <tr>
@@ -42,7 +42,7 @@ The examples were developed while working on an article series called *Coding Co
     <td colspan="2">04/2018 (covering examples on branches 10 and 11)</td>
   </tr>
   <tr>
-    <td rowspan="2"><img src="https://cloudogu.com/images/blog/2018/Jenkins_KubernetesSonarqube.png" width=50% /></td>
+    <td rowspan="2"><img src="https://cloudogu.com/assets/blog/2018/Coding_CD_4_150x150-91cbd52bc2d1a8e263a6320078f77708e70ae505efa81f474f5f680cf64fd58b.png" width=50% /></td>
     <td><a href="https://cloudogu.com/en/blog/continuous_delivery_4_en"> 🇬🇧 Statical Code Analysis with SonarQube and deployment to Kubernetes et al. with Jenkins Pipelines</a></td>
   </tr>
   <tr>
@@ -76,7 +76,8 @@ The following aspects are covered by the examples:
 10. Statical code analysis with SonarQube  
    a check quality gate outside of node (as shown within the docs)  ([declarative](https://github.com/cloudogu/jenkinsfiles/blob/10a-declarative/Jenkinsfile) | [scripted](https://github.com/cloudogu/jenkinsfiles/blob/10a-scripted/Jenkinsfile))  
    b analysis and quality gate within one stage (pragmatic, easier to maintain) ([declarative](https://github.com/cloudogu/jenkinsfiles/blob/10b-declarative/Jenkinsfile) | [scripted](https://github.com/cloudogu/jenkinsfiles/blob/10b-scripted/Jenkinsfile))
-11. Deployment to Kubernetes ([declarative](https://github.com/cloudogu/jenkinsfiles/blob/11-declarative/Jenkinsfile) | [scripted](https://github.com/cloudogu/jenkinsfiles/blob/11-scripted/Jenkinsfile))
+11. Plain Deployment to Kubernetes ([declarative](https://github.com/cloudogu/jenkinsfiles/blob/11-declarative/Jenkinsfile) | [scripted](https://github.com/cloudogu/jenkinsfiles/blob/11-scripted/Jenkinsfile))
+12. Deployment to Kubernetes using Helm (declarative (TODO) | [scripted](https://github.com/cloudogu/jenkinsfiles/blob/12-scripted/Jenkinsfile))
 
 
 # Jenkins Setup
@@ -141,7 +142,8 @@ and change the image name to match your registry.
 | 9b Docker (inside custom step)          | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/9b-declarative)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/9b-declarative/) | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/9b-scripted)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/9b-scripted/) | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/9b-shared-library)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/9b-shared-library) |
 | 10a SonarQube (as shown in docs)        | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/10a-declarative)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/10a-declarative/) <br/> See SQ! | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/10a-scripted)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/10a-scripted/) <br/> See SQ!| [![SonarQube Badge](https://sonarcloud.io/api/project_badges/measure?project=com.cloudogu.jenkinsfiles%3Awildfly-kitchensink&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.cloudogu.jenkinsfiles%3Awildfly-kitchensink) | |
 | 10b SonarQube (pragmatic)               | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/10b-declarative)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/10b-declarative/) <br/> See SQ!| [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/10b-scripted)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/10b-scripted/) <br/> See SQ!| [![SonarQube Badge](https://sonarcloud.io/api/project_badges/measure?project=com.cloudogu.jenkinsfiles%3Awildfly-kitchensink&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.cloudogu.jenkinsfiles%3Awildfly-kitchensink) | |
-| 11. Kubernetes                          | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/11-declarative)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/11-declarative/) | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/11-scripted)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/11-scripted/) |  |
+| 11. Kubernetes (plain)                  | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/11-declarative)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/11-declarative/) | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/11-scripted)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/11-scripted/) |  |
+| 12. Kubernetes (Helm)                   | - | [![Build Status](https://oss.cloudogu.com/jenkins/buildStatus/icon?job=cloudogu-github/jenkinsfiles/12-scripted)](https://oss.cloudogu.com/jenkins/job/cloudogu-github/job/jenkinsfiles/job/12-scripted/) |  |
 
 # Further resources
 
